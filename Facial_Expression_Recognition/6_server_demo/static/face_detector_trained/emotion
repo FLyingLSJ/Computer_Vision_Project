@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name leonglearnai.com www.leonglearnai.com;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/home/leong/emotion/emotion.sock;
+    }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>Leong-learn-AI</title> 
+</head>
+<body>
+	<div style="width:100%; text-align:center">
+		<div align="center">
+			<h2>Machine Learning Demo</h2>
+		</div>
+		
+		<div align="center">
+			<img border="0" src={{ imgPath }} alt="Pulpit_rock" align="center" width="224", height="256"> <!-- width="304" height="228"-->
+		</div>
+		
+		<div>
+			<form action='/upload' method='post' enctype='multipart/form-data'>
+				<input type='file' name='file'> 
+				<input type='submit' value='Upload'>
+			</form>
+		</div>
+		
+		<h2 align="center"> 本次预测的结果是：{{ result }} </h2>
+	</div>	
+
+</body>
+</html>
