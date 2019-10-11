@@ -10,7 +10,7 @@
 
 ![](image/图像分类从0到部署-fix2/acbcfa39gy1g6kaabfls9j2078078a9y.jpg)
 
-本项目整理完成后会上传所有代码到 Github 上，会有详细的代码注释，欢迎查阅！https://github.com/FLyingLSJ/
+本项目整理完成后会上传所有代码到 Github 上，会有详细的代码注释，欢迎查阅！https://github.com/FLyingLSJ/Computer_Vision_Project
 
 ### 1  说在前面
 
