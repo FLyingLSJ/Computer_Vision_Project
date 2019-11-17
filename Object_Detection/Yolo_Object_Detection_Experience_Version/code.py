@@ -114,9 +114,9 @@ def yolo_detect(pathIn='',
     print("classIDs", classIDs)
     
     # 自己修正过的 非极大值抑制方法
-    #idxs = NMSBoxes_fix(boxes, confidences, confidence_thre, nms_thre, classIDs)
+    idxs = NMSBoxes_fix(boxes, confidences, confidence_thre, nms_thre, classIDs)
     # 使用非极大值抑制方法抑制弱、重叠边界框
-    idxs = cv2.dnn.NMSBoxes(boxes, confidences, confidence_thre, nms_thre)
+    #idxs = cv2.dnn.NMSBoxes(boxes, confidences, confidence_thre, nms_thre)
     print(type(idxs))
 
     # 确保至少一个边界框

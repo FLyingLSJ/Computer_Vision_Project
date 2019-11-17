@@ -1,0 +1,59 @@
+https://towardsdatascience.com/object-detection-and-tracking-in-pytorch-b3cf1a696a98
+
+
+http://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html
+
+https://zhuanlan.zhihu.com/p/47654052
+
+https://pjreddie.com/
+
+
+
+https://blog.paperspace.com/how-to-implement-a-yolo-v3-object-detector-from-scratch-in-pytorch-part-3/
+
+
+https://www.cnblogs.com/pprp/p/10863496.html
+
+
+https://www.cnblogs.com/mtcnn/p/9411674.html  自己标注数据
+https://github.com/tzutalin/labelImg
+
+https://zhuanlan.zhihu.com/p/45803677 知乎
+
+https://blog.csdn.net/weixin_43981221/article/details/88714617
+
+
+https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46
+https://www.cnblogs.com/clemente/p/10224741.html
+https://zhuanlan.zhihu.com/p/76194845
+
+
+
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python
+# 若出现：libXrender.so.1: cannot open shared object file: No such file or directory
+# 考虑安装下面的包
+apt-get install libsm6
+apt-get install libxrender1
+apt-get install libxext-dev
+
+
+git clone https://github.com/pjreddie/darknet (如果安装不了，先试试sudo apt-get install git)
+cd darknet
+make
+
+wget https://pjreddie.com/media/files/darknet53.conv.74
+
+
+wget https://pjreddie.com/media/files/yolov3.weights
+./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg
+
+
+
+
+https://blog.csdn.net/xiao_lxl/article/details/85342707 VOC 数据格式含义
+
+
+https://zhuanlan.zhihu.com/p/50243898  # 超详细的 Pytorch 版 yolov3 代码中文注释详解
+
+https://zhuanlan.zhihu.com/p/76802514  # Yolo 三部曲解读
