@@ -1,1 +1,8 @@
 - [x] Facial_Expression_Recognition 人脸面部表情识别
+- [x] YOLO目标检测
+- [ ] face_swapping_in_8_steps 换脸
+- [ ] Gaze_controlled_keyboard 眼球控制
+- [ ] knn_classfication knn 分类
+- [ ] opencv-semantic-segmentation 分割
+- [ ] Pytorch 基础知识，demo
+- [ ] t-SNE 降维工具
