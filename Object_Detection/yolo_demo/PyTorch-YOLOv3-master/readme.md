@@ -2,7 +2,7 @@
 
 本项目参考 https://github.com/eriklindernoren/PyTorch-YOLOv3 ，感谢大佬开源，在此基础上增加了数据准备的说明，项目流程说明。
 
-[数据准备说明文档]: data/custom/readme.md	"  "
+[数据准备说明文档]: data/custom/readme.md	"数据准备说明文档"
 
 更多项目实战可以关注『**机器视觉CV**』公众号
 
@@ -10,14 +10,20 @@
 
 
 
+`注意：因为本人的电脑没有 GPU ，故跑不了代码，本项目所有代码都是在 Linux  下运行的，如果你的电脑（Win 操作系统想要运行本代码，可以安装 Git 软件来执行 Linux 命令）`
+
 在数据集整理完毕后训练的步骤如下：
 
-### 1. 修改配置文件
+### 1. 修改配置文件和下载预训练权重
 
 ```bash
 $ cd config/   # Navigate to config dir
 # Will create custom model 'yolov3-custom.cfg'
 $ bash create_custom_model.sh <num-classes>   #  <num-classes> 类别数目参数，根据你的需要修改
+
+# 下载预训练权重
+$ cd weights/
+$ bash download_weights.sh
 ```
 
 ### 2. 修改 config/custom.data 文件
@@ -32,10 +38,38 @@ names=data/custom/classes.names
 
 ### 3. 修改 data/custom/classes.names 文件
 
-每个类别一行，顺序要和 data/custom/3_trans.py 中的 classes 变量的顺序一样
+这里需要分两种情况
+
+- 有完整的数据，也就是有原始的图片和 txt 文件的，请执行下面的操作
+
+  因为你已经有了 txt  格式的标注数据了，大致的内容如下，第一个数字就是类别对应的代码了，比如 cat 对应 0，dog 对应 1，pig 对应 2
+
+  ```bash
+  0 0.014656616415410386 0.41642011834319526 0.024288107202680067 0.051775147928994084
+  1 0.22989949748743718 0.33357988165680474 0.01423785594639866 0.034023668639053255
+  2 0.28936348408710216 0.30029585798816566 0.01256281407035176 0.03254437869822485
+  ```
+
+  那么 data/custom/classes.names 文件必须写成以下形式，必须要对应，否则会出错的
+
+  ```bash
+  cat
+  dog
+  pig
+  
+  ```
+
+  
+
+- 没有完整的数据的，即，只有原始图片和 xml 文件的，请执行下面的操作
+
+  每个类别一行，顺序要和 data/custom/3_trans.py 中的 classes 变量的顺序一样
+
+不管你有么有完整的数据，也请看看第 4 步，没有完整数据的，根据第 4 步进行数据格式转换，有完整数据的，请看看数据的存放格式是怎么样的
+
+### 4. 数据集处理流程请见 data/custom/readme.md
 
 
-### 4. 数据集处理流程请见 data/custom/readme.txt
 
 ### 5. 上述准备准备完毕后开始训练
 
@@ -74,7 +108,7 @@ python detect_2.py --image_folder data/samples/ --weights_path checkpoints/yolov
 
 出现警告解决方案
 `UserWarning: indexing with dtype torch.uint8 is now deprecated, please use a dtype torch.bool instead`. 
-在 model.py  **计算损失的位置 大概在 196 行左右**添加以下两句
+在 model.py  **计算损失的位置 大概在 196 行左右**添加以下两句（我已经添加到源码中了）
 
 ```python 
 obj_mask=obj_mask.bool() # convert int8 to bool
