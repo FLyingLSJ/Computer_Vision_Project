@@ -149,7 +149,7 @@ def yolo_detect(pathIn='',
 src = './test_imgs/'
 dst = './result_imgs/'
 img_list = os.listdir(src)
-for img in img_list[-1:]:
+for img in img_list:
     pathIn = src + img
     pathOut = dst + img
     yolo_detect(pathIn, pathOut)

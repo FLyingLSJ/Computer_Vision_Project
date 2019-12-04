@@ -57,3 +57,5 @@ https://blog.csdn.net/xiao_lxl/article/details/85342707 VOC 数据格式含义
 https://zhuanlan.zhihu.com/p/50243898  # 超详细的 Pytorch 版 yolov3 代码中文注释详解
 
 https://zhuanlan.zhihu.com/p/76802514  # Yolo 三部曲解读
+
+https://www.cnblogs.com/supersayajin/p/11445401.html  # 目标检测

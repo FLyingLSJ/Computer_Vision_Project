@@ -1,3 +1,15 @@
+### 前言
+
+本项目参考 https://github.com/eriklindernoren/PyTorch-YOLOv3 ，感谢大佬开源，在此基础上增加了数据准备的说明，项目流程说明。
+
+[数据准备说明文档]: data/custom/readme.md	"  "
+
+更多项目实战可以关注『**机器视觉CV**』公众号
+
+<img src="公众号.jpg" alt=" " style="zoom:50%;" />
+
+
+
 在数据集整理完毕后训练的步骤如下：
 
 ### 1. 修改配置文件
@@ -5,13 +17,13 @@
 ```bash
 $ cd config/   # Navigate to config dir
 # Will create custom model 'yolov3-custom.cfg'
-$ bash create_custom_model.sh <num-classes>   #  num-classes 类别数目参数
+$ bash create_custom_model.sh <num-classes>   #  <num-classes> 类别数目参数，根据你的需要修改
 ```
 
 ### 2. 修改 config/custom.data 文件
 
 ```python
-classes= 2  # 类别数
+classes= 2  # 类别数，根据你的需要修改
 train=data/custom/train.txt
 valid=data/custom/valid.txt
 names=data/custom/classes.names
@@ -62,12 +74,16 @@ python detect_2.py --image_folder data/samples/ --weights_path checkpoints/yolov
 
 出现警告解决方案
 `UserWarning: indexing with dtype torch.uint8 is now deprecated, please use a dtype torch.bool instead`. 
-在 model.py L191 （191行）添加以下两句
+在 model.py  **计算损失的位置 大概在 196 行左右**添加以下两句
 
 ```python 
 obj_mask=obj_mask.bool() # convert int8 to bool
 noobj_mask=noobj_mask.bool() #convert int8 to bool
 ```
+
+
+
+注意预测的时候需要检查数据的格式问题（单通道？三通道？）
 
 
 
