@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Faster_RCNN_experience_demo</folder>
+	<filename>Group-of-People.jpg</filename>
+	<path>C:\BLOG\Computer_Vision_Project\Computer_Vision_Project\Object_Detection\R-CNN\Faster_RCNN_experience_demo\Group-of-People.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1177</width>
+		<height>719</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>1</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>138</xmin>
+			<ymin>60</ymin>
+			<xmax>332</xmax>
+			<ymax>639</ymax>
+		</bndbox>
+	</object>
+</annotation>
